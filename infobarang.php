@@ -20,41 +20,75 @@ if ($del != "") {
    $sqlDel = "delete from barang where id='$del' ";
    $queryDel = mysqli_query($conn, $sqlDel);
    if ($queryDel) {
-?>
+      ?>
       <!-- Javascript -->
       <script>
          alert('Data Barang Berhasil Dihapus!');
          document.location = 'index.php?page=barang';
-      </script>
+         </script>
 <?php
    }
 }
 
 if (isset($_POST['edit'])) {
-	if ($foto != '') {
-		$row = mysqli_fetch_array(mysqli_query($conn, "select * from barang where id='$upd'"));
+   if ($foto != '') {
+      $row = mysqli_fetch_array(mysqli_query($conn, "select * from barang where id='$upd'"));
 		$filegambar = $row['gambar'];
 		unlink($filegambar);
 		$upload = 'images/' . $foto;
 		move_uploaded_file($_FILES['foto']['tmp_name'], $upload);
-		$sqlUpd =  "update barang set nama='$nama',kategori = '$kat',stok='$stok', harga='$harga', keterangan='$ket',gambar='$upload' 
+		$sqlUpd =  "update barang set nama='$nama',kategori = '$kategori',stok='$stok', harga='$harga', keterangan='$ket',gambar='$upload' 
 		where id='$upd' ";
 	} else {
-		$sqlUpd =  "update barang set nama='$nama',kategori = '$kat',stok='$stok', harga='$harga', keterangan='$ket' 
+      $sqlUpd =  "update barang set nama='$nama',kategori = '$kategori',stok='$stok', harga='$harga', keterangan='$ket' 
 		where id='$upd' ";
 	}
-
+   
 	$queryUpd = mysqli_query($conn, $sqlUpd);
 	if ($queryUpd) {
-?>
+      ?>
 		<!-- Javascript -->
 		<script>
-			alert('Data Barang Berhasil Diubah!');
+         alert('Data Barang Berhasil Diubah!');
 			document.location = 'index.php?page=barang';
-		</script>
+         </script>
 	<?php
 	}
 }
+
+$feedback = $_POST['feedback'];
+$idfb = $_GET['fb'];
+if(isset($_POST['InsertFeedback'])){
+   $sqlSelFb = "SELECT * FROM barang where id = '$idfb'";
+   $querySelFb = mysqli_query($conn, $sqlSelFb);
+   $row3 = mysqli_fetch_array($querySelFb);
+   $feedbackLama = $row3['feedback'];
+   if ($row3['feedback'] != ''){
+      $feedbackBaru = "$feedbackLama, ". "$feedback";
+      $sqlUpdFb = "UPDATE barang set feedback = '$feedbackBaru' where id = '$idfb'";
+      $queryUpdFb = mysqli_query($conn, $sqlUpdFb);
+      if ($queryUpdFb){
+         ?>
+            <script>
+               alert("Terima Kasih Feedback Anda telah kami terima!");
+               document.location = "index.php?page=barang";
+               </script>
+         <?php
+      }
+   } else {
+      $sqlUpdFb2 = "UPDATE barang set feedback = '$feedback' where id = '$idfb'";
+      $queryUpdFb2 = mysqli_query($conn, $sqlUpdFb2);
+      if ($queryUpdFb2){
+         ?>
+            <script>
+               alert("Terima Kasih Feedback Anda telah kami terima!");
+               document.location = "index.php?page=barang";
+            </script>
+         <?php
+      } 
+   }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -112,7 +146,7 @@ if (isset($_POST['edit'])) {
                   <?php
                   $idUser = $_SESSION['id'];
                   $no++;
-                  $sql = "SELECT * FROM barang where id=$id";
+                  $sql = "SELECT * FROM barang where id='$id'";
                   $query = mysqli_query($conn, $sql);
                   $row = mysqli_fetch_array($query);
                   echo "
@@ -168,8 +202,45 @@ if (isset($_POST['edit'])) {
                                  Edit
                               </button>
                               <a class="btn btn-danger" href="index.php?page=infobarang&del=<?php echo $row['id'] ?>">Delete</a>
-                              <?php } ?>
-                              <!-- Modal -->
+                              <?php } else {
+                                 $sqlCek = "SELECT * FROM transaksi";
+                                 $queryCek = mysqli_query($conn, $sqlCek);
+                                 while ($row2 = mysqli_fetch_array($queryCek)){
+                                    if ($row2['id_barang'] == $row['id'] && $row2['id_pelanggan'] == $_SESSION['id'] && $row2['status'] == 'selesai'){
+                                       echo "<p class='text-center buttons'>
+                                       <button type='button' class='btn btn-warning' data-toggle='modal' data-target='#ModalFeedback'>
+                                          Feedback
+                                       </button>
+                                    </p>";
+                                    }
+                                 }   
+                              }?>
+                              <!-- Modal Feedback-->
+                              <div class="modal fade" id="ModalFeedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                 <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Feedback</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                       <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                       <form action="index.php?page=infobarang&fb=<?php echo $row['id']?>" method="POST">
+                                          <div class="form-group">
+                                             <label for="exampleFormControlTextarea1">Masukan Feedback Anda</label>
+                                             <textarea name="feedback" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                          </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                       <input type="submit" class="btn btn-primary" name="InsertFeedback" value="Kirim"></input>
+                                    </form>
+                                    </div>
+                                 </div>
+                              </div>
+                              </div>
+                              <!-- Modal Edit Barang -->
                               <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                  <div class="modal-dialog" role="document">
                                     <div class="modal-content">
@@ -197,7 +268,7 @@ if (isset($_POST['edit'])) {
                                                 <label for="exampleFormControlSelect1">Kategori</label>
                                                 <select name="katBarang" class="form-control" id="exampleFormControlSelect1">
                                                    <?php
-                                                   $opsi = array("sembako", "elektronik", "jajanan");
+                                                   $opsi = array("sembako", "produk instan", "perlengkapan mandi");
                                                    foreach ($opsi as $opsi) {
                                                       if ($opsi == $row['kategori']) {
                                                          echo "<option value='$opsi' selected>$opsi</option>";

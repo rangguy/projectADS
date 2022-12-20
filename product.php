@@ -120,9 +120,9 @@ include 'koneksi.php';
                   if($_GET['kategori'] == 'sembako'){
                      $kat = "sembako"; 
                   }else if($_GET['kategori'] == 'instan'){
-                     $kat = "instan";
+                     $kat = "produk instan";
                   }else if($_GET['kategori'] == 'perlengkapanmandi'){
-                     $kat = "perlengkapanmandi";
+                     $kat = "perlengkapan mandi";
                   }else {
                      $kat = '';
                   }
