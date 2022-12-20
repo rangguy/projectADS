@@ -115,7 +115,7 @@ include 'koneksi.php';
          } else if($_GET['page'] == 'infobarang'){
             include 'infobarang.php';
          } else if($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'admin'){
-            include 'verif.php';
+            include 'proses.php';
          } else if($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'owner'){
             include 'lapTransaksi.php';
          } else {
