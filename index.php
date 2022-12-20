@@ -48,7 +48,13 @@ include 'koneksi.php';
                            <a class="nav-link" href="index.php?page=testimonial">Testimonial</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="index.php?page=pesanan">
+                           <?php if($_SESSION['user'] == '')  {
+                              ?>
+                              <a class="nav-link" href="login/login.php">
+                              <?php
+                           } else { ?> 
+                              <a class="nav-link" href="index.php?page=pesanan">
+                           <?php }?>
                               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
                                  <g>
                                     <g>

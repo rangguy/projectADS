@@ -11,9 +11,7 @@ if($upd != ''){
         header("location:index.php?page=pesanan");
     }
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 

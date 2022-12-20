@@ -33,14 +33,14 @@ include 'koneksi.php';
       <div class="container">
          <div class="heading_container heading_center">
             <h2>
-               Our <span>products</span>
+               Produk <span>Kami</span>
             </h2>
          </div>
          <div class="row">
             <div class="col-md-3 mb-3">
                <div class="card sidebar-menu">
                   <div class="card-header">
-                     <h5 class="card-title">Products Categories</h5>
+                     <h5 class="card-title" align="center">Kategori Produk</h5>
                   </div><!-- card-header ends-->
                   <div class="card-body">
                      <ul class="nav nav-pills flex-column nav-stacked category-menu">
