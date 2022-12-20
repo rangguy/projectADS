@@ -108,12 +108,16 @@ include 'koneksi.php';
             include 'product.php';
          } else if ($_GET['page'] == 'testimonial') {
             include 'testimonial.php';
-         } else if ($_GET['page'] == 'pesanan') {
+         } else if ($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'pelanggan') {
             include 'pesanan.php';
          } else if($_GET['page'] == 'profil'){
             include 'profil.php';
          } else if($_GET['page'] == 'infobarang'){
             include 'infobarang.php';
+         } else if($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'admin'){
+            include 'verif.php';
+         } else if($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'owner'){
+            include 'lapTransaksi.php';
          } else {
             include 'error.php';
          }
@@ -493,7 +497,7 @@ include 'koneksi.php';
 <?php
       }
 ?>
-<div class="cpy_">
+<div class="navbar fixed navbar-light cpy_ ms-auto">
    <div class="container">
       <p>© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a></p>
    </div>

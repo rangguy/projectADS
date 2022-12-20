@@ -144,7 +144,7 @@ if (isset($_POST['edit'])) {
                                     </div>
                                  </div><!-- form-group row ends -->
                                  <p class='text'>$row[keterangan]</p>";
-                                 if($row['stok'] == 0){
+                                 if($row['stok'] == 0 | $_SESSION['status'] != 'pelanggan'){
                                     echo "<p class='text-center buttons'>
                                        <button class='btn btn-primary' name='addBarang' type='submit' disabled>
                                           <i class='fa fa-shopping-cart'></i>
