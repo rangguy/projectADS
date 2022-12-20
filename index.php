@@ -141,13 +141,13 @@ include 'koneksi.php';
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                       Sale 20% Off
+                                       Diskon 10%
                                     </span>
                                     <br>
-                                    On Everything
+                                     Semua pembelian
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
+                                    Dengan minimal harga Rp. 50.000. Dapatkan potongan sebesar 10% setiap pembelian minimum Rp. 50.000
                                  </p>
                                  <div class="btn-box">
                                     <a href="index.php?page=barang" class="btn1">
@@ -263,7 +263,7 @@ include 'koneksi.php';
                         Fast Delivery
                      </h5>
                      <p>
-                        variations of passages of Lorem Ipsum available
+                        Anda Bayar Kami Sampai Pengiriman sekejap mata
                      </p>
                   </div>
                </div>
@@ -349,7 +349,7 @@ include 'koneksi.php';
                         Free Shiping
                      </h5>
                      <p>
-                        variations of passages of Lorem Ipsum available
+                        Gratis pengiriman ke manapun dan di manapun
                      </p>
                   </div>
                </div>
@@ -370,7 +370,7 @@ include 'koneksi.php';
                         Best Quality
                      </h5>
                      <p>
-                        variations of passages of Lorem Ipsum available
+                        Produk kami memiliki kualitas tinggi
                      </p>
                   </div>
                </div>
@@ -397,7 +397,7 @@ include 'koneksi.php';
                   <p style="margin-top: 20px;margin-bottom: 30px;">
                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit non deleniti, velit id ut iusto, laboriosam delectus perferendis, excepturi iure necessitatibus sapiente aperiam rerum cumque. Expedita distinctio voluptatem voluptas ut!
                   </p>
-                  <div class="btn-box">
+                  <div class="btn">
                      <a href="index.php?page=barang" class="btn1">
                         Shop Now
                      </a>
@@ -409,97 +409,7 @@ include 'koneksi.php';
    </section>
    <!-- end arrival section -->
 
-   <!-- client section -->
-   <section class="client_section layout_padding">
-      <div class="container">
-         <div class="heading_container heading_center">
-            <h2>
-               Customer's Testimonial
-            </h2>
-         </div>
-         <div id="carouselExample3Controls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-               <div class="carousel-item active">
-                  <div class="box col-lg-10 mx-auto">
-                     <div class="img_container">
-                        <div class="img-box">
-                           <div class="img_box-inner">
-                              <img src="images/client.jpg" alt="">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Anna Trevor
-                        </h5>
-                        <h6>
-                           Customer
-                        </h6>
-                        <p>
-                           Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="box col-lg-10 mx-auto">
-                     <div class="img_container">
-                        <div class="img-box">
-                           <div class="img_box-inner">
-                              <img src="images/client.jpg" alt="">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Anna Trevor
-                        </h5>
-                        <h6>
-                           Customer
-                        </h6>
-                        <p>
-                           Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <div class="box col-lg-10 mx-auto">
-                     <div class="img_container">
-                        <div class="img-box">
-                           <div class="img_box-inner">
-                              <img src="images/client.jpg" alt="">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Anna Trevor
-                        </h5>
-                        <h6>
-                           Customer
-                        </h6>
-                        <p>
-                           Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="carousel_btn_box">
-               <a class="carousel-control-prev" href="#carouselExample3Controls" role="button" data-slide="prev">
-                  <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
-                  <span class="sr-only">Previous</span>
-               </a>
-               <a class="carousel-control-next" href="#carouselExample3Controls" role="button" data-slide="next">
-                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-                  <span class="sr-only">Next</span>
-               </a>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!-- end client section -->
+   
 <?php
       }
 ?>
