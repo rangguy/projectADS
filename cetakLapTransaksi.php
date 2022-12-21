@@ -1,7 +1,8 @@
 <?php
-session_start();
 include 'koneksi.php';
 
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=Data Transaksi.xls");
 ?>
 
 <!DOCTYPE html>
@@ -9,21 +10,13 @@ include 'koneksi.php';
 
 <body>
     <div class="mt-5">
-        <div class="heading_container heading_center mt-4 mb-4">
+        <div class="">
             <h2>
                 Laporan Transaksi
             </h2>
         </div>
-        <table class='table table-bordered table-striped table-hover table-responsive-sm mb-4'>
-            <?php if($_SESSION['status'] == 'admin') {
-                echo " 
-                <center>
-                    <a href='index.php?page=pesanan' class='btn btn-primary mb-4' align='center'>Pesanan</a>
-                    <a href='cetakLapTransaksi.php' class='btn btn-success mb-4'>Cetak</a>
-                </center>
-                ";
-            } ?>
-            <thead class='thead-dark'>
+        <table border="1">
+            <thead>
                 <th>No</th>
                 <th>Barang</th>
                 <th>Total Barang</th>
@@ -65,8 +58,10 @@ include 'koneksi.php';
                     ?>
                 <td></td>
                 <td><b>Total Barang</b></td>
-                <td colspan="2"><?php echo $totalBarang ?></td>
-                <td colspan="2"><b>Total Harga</b></td>
+                <td><?php echo $totalBarang ?></td>
+                <td></td>
+                <td></td>
+                <td><b>Total Harga</b></td>
                 <td>Rp. <?php echo $totalHarga?></td>
         </table>
     </div>

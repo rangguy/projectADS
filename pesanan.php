@@ -46,7 +46,7 @@ if ($_SESSION['user'] == '') {
             <div id="content mt-5">
                 <div class="container mt-5 mb-5">
                     <div class="row">
-                        <div class="col-md-9" id="cart">
+                        <div class="col-md-8" id="cart">
                             <div class="card">
                                 <div class="card-body">
                                     <h3>Keranjang Belanja</h3>
@@ -200,7 +200,7 @@ if ($_SESSION['user'] == '') {
                             </div><!-- card ends -->
 
                         </div><!--  .col-md-9 #cart ends -->
-                        <div class="col-md-3 mb-5">
+                        <div class="col-md-4 mb-5">
                             <div class="card" id="order-summary">
                                 <div class="card-header">
                                     <h5>Ringkasan Belanja</h5>
@@ -213,15 +213,11 @@ if ($_SESSION['user'] == '') {
                                         <table class="table">
                                             <tbody>
                                                 <tr>
-                                                    <td>Total</td>
+                                                    <td>Total Harga</td>
                                                     <th><?php echo "Rp. " . $totalHarga ?></th>
                                                 </tr>
-                                                <tr>
-                                                    <td>Potongan</td>
-                                                    <td>Rp. <?php echo $diskon?></td>
-                                                </tr>
                                                 <tr class="total">
-                                                    <td>Total</td>
+                                                    <td>Total Bayar</td>
                                                     <th><?php $hargaAkhir = $totalHarga - $diskon;
                                                         echo "Rp. " . $hargaAkhir ?></th>
                                                 </tr>

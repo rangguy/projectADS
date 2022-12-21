@@ -140,13 +140,13 @@ include 'koneksi.php';
                               <div class="detail-box">
                                  <h1>
                                     <span>
-                                       Diskon 10%
+                                       Haha
                                     </span>
                                     <br>
-                                     Semua pembelian
+                                       Cihuy
                                  </h1>
                                  <p>
-                                    Dengan minimal harga Rp. 50.000. Dapatkan potongan sebesar 10% setiap pembelian minimum Rp. 50.000
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto illo, ad officiis, doloremque dolorem dolor nihil molestiae, corrupti ea hic veritatis pariatur ex natus? Eaque ea aperiam hic pariatur consequuntur.
                                  </p>
                                  <div class="btn-box">
                                     <a href="index.php?page=barang" class="btn1">

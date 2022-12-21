@@ -1,7 +1,7 @@
 <?php
-session_start();
 include 'koneksi.php';
-
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=Data Barang.xls");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,18 +13,14 @@ include 'koneksi.php';
 </head>
 
 <body>
-    <div class="mt-5">
-        <div class="heading_container heading_center mb-5">
+    <div class="">
+        <div class="">
             <h2>
                 Laporan Barang
             </h2>
         </div>
-        <table class='table table-bordered table-striped table-hover table-responsive-sm mb-5'>
-            <center>
-                <a href="index.php?page=barang" class="btn btn-primary mb-4">Produk</a>
-                <a href="excel.php" class="btn btn-success mb-4">Cetak</a>
-            </center>
-            <thead class='thead-dark'>
+        <table border="1">
+            <thead>
                 <th>No</th>
                 <th>Nama Barang</th>
                 <th>Kategori</th>
@@ -51,12 +47,8 @@ include 'koneksi.php';
                         <td>$no</td>
                         <td>$row1[nama]</td>
                         <td>$row1[kategori]</td>
-                        <td>Rp. $row1[harga]</td>";
-                        if ($row1['stok'] <= 0){
-                            echo "<button class='btn btn-danger'>Habis</button>";
-                        } else {
-                            echo "<td>$row1[stok]</td>";
-                        }echo "
+                        <td>Rp. $row1[harga]</td>
+                        <td>$row1[stok]
                         <td>$jumlah</td>
                         <td>Rp. $totalHargaTerjual</td>
                     </tr>

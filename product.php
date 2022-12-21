@@ -56,66 +56,67 @@ include 'koneksi.php';
                <?php
                if ($_SESSION['status'] == 'admin' | $_SESSION['status'] == 'pegawai') {
                ?>
-                  <div class="row">
-                     <div class='col-md-4 col-sm-6 center-responsive'>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                           Tambah
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                           <div class="modal-dialog" role="document">
-                              <div class="modal-content">
-                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                       <span aria-hidden="true">&times;</span>
-                                    </button>
-                                 </div>
-                                 <div class="modal-body">
-                                    <form method="POST" action="tambahBarang.php" name="formBarang" enctype="multipart/form-data">
-                                       <div class="form-group">
-                                          <label for="exampleFormControlInput1">Nama Barang</label>
-                                          <input name="namaBarang" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Barang">
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="exampleFormControlInput1">Stok</label>
-                                          <input name="stokBarang" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Stok Barang">
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="exampleFormControlInput1">Harga</label>
-                                          <input name="hargaBarang" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Harga Barang">
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="exampleFormControlSelect1">Kategori</label>
-                                          <select name="katBarang" class="form-control" id="exampleFormControlSelect1">
-                                             <option value="sembako">Sembako</option>
-                                             <option value="elektronik">Elektronik</option>
-                                             <option value="jajanan">Snack</option>
-                                          </select>
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="exampleFormControlTextarea1">Keterangan</label>
-                                          <textarea name="ketBarang" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                       </div>
-                                       <div class="form-group">
-                                          <label for="exampleFormControlFile1">Foto Barang</label>
-                                          <input name="foto" type="file" accept=".png,.jpg" class="form-control-file" id="exampleFormControlFile1">
-                                       </div>
+                  <div class='col-md-4 col-sm-6 center-responsive d-inline'>
+                     <!-- Button trigger modal -->
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Tambah
+                     </button>
+                     <!-- Modal -->
+                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                           <div class="modal-content">
+                              <div class="modal-header">
+                                 <h5 class="modal-title" id="exampleModalLabel">Tambah Barang</h5>
+                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                 </button>
+                              </div>
+                              <div class="modal-body">
+                                 <form method="POST" action="tambahBarang.php" name="formBarang" enctype="multipart/form-data">
+                                    <div class="form-group">
+                                       <label for="exampleFormControlInput1">Nama Barang</label>
+                                       <input name="namaBarang" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Nama Barang">
                                     </div>
-                                    <div class="modal-footer">
-                                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                                       <input type="submit" name="insert" class="btn btn-primary" value="Submit"></input>
-                                    </form>
+                                    <div class="form-group">
+                                       <label for="exampleFormControlInput1">Stok</label>
+                                       <input name="stokBarang" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Stok Barang">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="exampleFormControlInput1">Harga</label>
+                                       <input name="hargaBarang" type="number" class="form-control" id="exampleFormControlInput1" placeholder="Harga Barang">
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="exampleFormControlSelect1">Kategori</label>
+                                       <select name="katBarang" class="form-control" id="exampleFormControlSelect1">
+                                          <option value="sembako">Sembako</option>
+                                          <option value="elektronik">Elektronik</option>
+                                          <option value="jajanan">Snack</option>
+                                       </select>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="exampleFormControlTextarea1">Keterangan</label>
+                                       <textarea name="ketBarang" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                       <label for="exampleFormControlFile1">Foto Barang</label>
+                                       <input name="foto" type="file" accept=".png,.jpg" class="form-control-file" id="exampleFormControlFile1">
+                                    </div>
                                  </div>
+                                 <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                                    <input type="submit" name="insert" class="btn btn-primary" value="Submit"></input>
+                                 </form>
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
+                  
                <?php } if ($_SESSION['status'] == 'owner' | $_SESSION['status'] == 'admin') { 
                   echo "
-                     <a href='index.php?page=lapbarang' class='btn btn-primary mt-2' align='center'>Lap. Barang</a>
+                  <div class='col-md-4 col-sm-6 center-responsive d-inline'>
+                     <a href='index.php?page=lapbarang' class='btn btn-primary' align='center'>Lap. Barang</a>
+                  </div>
                   ";
                }?>
                <div class="row">
