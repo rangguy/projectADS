@@ -38,11 +38,12 @@ include 'koneksi.php';
             $queryTampil = mysqli_query($conn, $sqlTampil);
             while ($row1 = mysqli_fetch_array($queryTampil)) {
                 $idBarang = $row1['id'];
-                $sqlHitung = "SELECT * FROM transaksi WHERE id_barang = $idBarang";
+                $sqlHitung = "SELECT * FROM transaksi WHERE id_barang = $idBarang AND status = 'selesai'";
                 $queryHitung = mysqli_query($conn, $sqlHitung);
                 while($row2 = mysqli_fetch_array($queryHitung)){
-                    $jumlahTerjual = $row2['jumlah'] + $jumlahTerjual;
-                }$totalHargaTerjual = $jumlahTerjual * $row1['harga'];
+                    $jumlah = $row2['jumlah'];
+                }
+                $totalHargaTerjual = $jumlah * $row1['harga'];
                 echo "
                 <tbody>
                     <tr>
@@ -55,16 +56,16 @@ include 'koneksi.php';
                         } else {
                             echo "<td>$row1[stok]</td>";
                         }echo "
-                        <td>$jumlahTerjual</td>
+                        <td>$jumlah</td>
                         <td>Rp. $totalHargaTerjual</td>
                     </tr>
                 </tbody>  
                         ";
-                $totalBarang = $row1['stok'] + $totalBarang;
-                $totalHarga = $totalHargaTerjual + $totalHarga;
-                $totalJumlahTerjual = $jumlahTerjual + $totalJumlahTerjual;
-                $no++;
-            }
+                        $totalBarang = $row1['stok'] + $totalBarang;
+                        $totalJumlahTerjual = $jumlah + $totalJumlahTerjual;
+                        $totalHarga = $totalHargaTerjual + $totalHarga;
+                        $no++;
+                    }
             ?>
             <td colspan="4"><b>Jumlah</b></td>
             <td><?php echo $totalBarang ?></td>

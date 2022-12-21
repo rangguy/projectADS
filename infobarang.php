@@ -183,7 +183,7 @@ if(isset($_POST['InsertFeedback'])){
                                     <div class='form-group row'>
                                        <label class='col-md-5 col-form-label'>Feedback</label>
                                        <div class='col-md-7'>
-                                       <p class='text' >$row[feedback]</p>
+                                       <p class='text'>$row[feedback]</p>
                                        </div>
                                     </div><!-- form-group row ends -->";
                                  }
