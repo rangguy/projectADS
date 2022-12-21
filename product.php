@@ -89,8 +89,8 @@ include 'koneksi.php';
                                        <label for="exampleFormControlSelect1">Kategori</label>
                                        <select name="katBarang" class="form-control" id="exampleFormControlSelect1">
                                           <option value="sembako">Sembako</option>
-                                          <option value="elektronik">Elektronik</option>
-                                          <option value="jajanan">Snack</option>
+                                          <option value="produk instan">Produk Instan</option>
+                                          <option value="perlengkapan mandi">Perlengkapan Mandi</option>
                                        </select>
                                     </div>
                                     <div class="form-group">
