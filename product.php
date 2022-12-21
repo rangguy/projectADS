@@ -113,7 +113,11 @@ include 'koneksi.php';
                         </div>
                      </div>
                   </div>
-               <?php } ?>
+               <?php } if ($_SESSION['status'] == 'owner' | $_SESSION['status'] == 'admin') { 
+                  echo "
+                     <a href='index.php?page=lapbarang' class='btn btn-primary mt-2' align='center'>Lap. Barang</a>
+                  ";
+               }?>
                <div class="row">
                   <?php
                   $no++;

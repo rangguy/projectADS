@@ -121,7 +121,7 @@ if(isset($_POST['InsertFeedback'])){
       <div class="container">
          <div class="heading_container heading_center">
             <h2>
-               Our <span>products</span>
+               Produk <span>Kami</span>
             </h2>
          </div>
 
@@ -129,7 +129,7 @@ if(isset($_POST['InsertFeedback'])){
             <div class="col-md-3 mb-3">
             <div class="card sidebar-menu">
                   <div class="card-header">
-                     <h5 class="card-title">Products Categories</h5>
+                     <h5 class="card-title">Kategori Produk</h5>
                   </div><!-- card-header ends-->
                   <div class="card-body">
                      <ul class="nav nav-pills flex-column nav-stacked category-menu">
@@ -177,7 +177,16 @@ if(isset($_POST['InsertFeedback'])){
                                     <p class='price' name='SubTotal' id='SubTotal' >Rp. $row[harga] / pcs</p>
                                     </div>
                                  </div><!-- form-group row ends -->
-                                 <p class='text'>$row[keterangan]</p>";
+                                 <p class='text' >$row[keterangan]</p>";
+                                 if ($_SESSION['status'] != 'pelanggan'){
+                                    echo "
+                                    <div class='form-group row'>
+                                       <label class='col-md-5 col-form-label'>Feedback</label>
+                                       <div class='col-md-7'>
+                                       <p class='text' >$row[feedback]</p>
+                                       </div>
+                                    </div><!-- form-group row ends -->";
+                                 }
                                  if($row['stok'] == 0 | $_SESSION['status'] != 'pelanggan'){
                                     echo "<p class='text-center buttons'>
                                        <button class='btn btn-primary' name='addBarang' type='submit' disabled>

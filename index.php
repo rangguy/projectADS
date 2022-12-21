@@ -45,9 +45,6 @@ include 'koneksi.php';
                            <a class="nav-link" href="index.php?page=barang">Products</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="index.php?page=testimonial">Testimonial</a>
-                        </li>
-                        <li class="nav-item">
                            <?php if($_SESSION['user'] == '')  {
                               ?>
                               <a class="nav-link" href="login/login.php">
@@ -112,8 +109,6 @@ include 'koneksi.php';
       if (isset($_GET['page'])) {
          if ($_GET['page'] == 'barang') {
             include 'product.php';
-         } else if ($_GET['page'] == 'testimonial') {
-            include 'testimonial.php';
          } else if ($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'pelanggan') {
             include 'pesanan.php';
          } else if($_GET['page'] == 'profil'){
@@ -124,6 +119,10 @@ include 'koneksi.php';
             include 'proses.php';
          } else if($_GET['page'] == 'pesanan' && $_SESSION['status'] == 'owner'){
             include 'lapTransaksi.php';
+         } else if ($_GET['page'] == 'laptransaksi') {
+            include 'lapTransaksi.php';
+         } else if($_GET['page'] == 'lapbarang'){
+            include 'lapBarang.php';
          } else {
             include 'error.php';
          }
