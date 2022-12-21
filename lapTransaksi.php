@@ -22,7 +22,13 @@ include 'koneksi.php';
                     <a href='cetakLapTransaksi.php' class='btn btn-success mb-4'>Cetak</a>
                 </center>
                 ";
-            } ?>
+            } else if ($_SESSION['status'] == 'owner') { 
+                echo " 
+                <center>
+                    <a href='cetakLapTransaksi.php' class='btn btn-success mb-4'>Cetak</a>
+                </center>
+                ";
+            }?>
             <thead class='thead-dark'>
                 <th>No</th>
                 <th>Barang</th>
