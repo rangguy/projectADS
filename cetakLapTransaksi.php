@@ -9,8 +9,8 @@ header("Content-Disposition: attachment; filename=Data Transaksi.xls");
 <html lang="en">
 
 <body>
-    <div class="mt-5">
-        <div class="">
+    <div class="container mt-5">
+        <div class="heading_container heading_center mb-5">
             <h2>
                 Laporan Transaksi
             </h2>

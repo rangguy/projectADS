@@ -13,7 +13,7 @@ include 'koneksi.php';
 </head>
 
 <body>
-    <div class="mt-5">
+    <div class="container">
         <div class="heading_container heading_center mb-5">
             <h2>
                 Laporan Barang
@@ -39,10 +39,13 @@ include 'koneksi.php';
             $queryTampil = mysqli_query($conn, $sqlTampil);
             while ($row1 = mysqli_fetch_array($queryTampil)) {
                 $idBarang = $row1['id'];
-                $sqlHitung = "SELECT * FROM transaksi WHERE id_barang = $idBarang AND status = 'selesai'";
+                $sqlHitung = "SELECT SUM(jumlah) AS jumlah_beli FROM transaksi WHERE id_barang = $idBarang AND status = 'selesai'";
                 $queryHitung = mysqli_query($conn, $sqlHitung);
                 while($row2 = mysqli_fetch_array($queryHitung)){
-                    $jumlah = $row2['jumlah'];
+                    $jumlah = $row2['jumlah_beli'];
+                    if($jumlah == ''){
+                        $jumlah = 0;
+                    }
                 }
                 $totalHargaTerjual = $jumlah * $row1['harga'];
                 echo "

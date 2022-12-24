@@ -8,7 +8,7 @@ include 'koneksi.php';
 <html lang="en">
 
 <body>
-    <div class="mt-5">
+    <div class="container">
         <div class="heading_container heading_center mt-4 mb-4">
             <h2>
                 Laporan Transaksi
@@ -74,7 +74,7 @@ include 'koneksi.php';
                 <td colspan="2"><?php echo $totalBarang ?></td>
                 <td colspan="2"><b>Total Harga</b></td>
                 <td>Rp. <?php echo $totalHarga?></td>
-        </table>
+        </table><br><br><br>
     </div>
 </body>
 

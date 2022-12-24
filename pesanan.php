@@ -36,8 +36,7 @@ if ($_SESSION['user'] == '') {
     <!DOCTYPE html>
     <html lang="en">
 
-    <body>
-        <div class="container mt-5 mb-5">
+    <body class="sub_page">
             <div class="heading_container heading_center">
                 <h2>
                     Keranjang
@@ -230,7 +229,7 @@ if ($_SESSION['user'] == '') {
                     </div><!-- row ends -->
                 </div><!-- container ends -->
             </div><!-- content ends -->
-        </div>
+        <br><br><br>
     </body>
 
     </html>

@@ -12,9 +12,16 @@ if ($upd != '') {
     }
 }
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <body>
-    <div class="mt-5">
+    <div class="container">
+
         <div class="heading_container heading_center mb-5">
             <h2>
                 Pesanan
@@ -64,6 +71,7 @@ if ($upd != '') {
                 $no++;
             }
             ?>
-        </table>
+        </table><br><br><br><br><br><br><br><br><br><br>
     </div>
 </body>
+</html>

@@ -14,45 +14,49 @@
     $row3 = mysqli_fetch_array($query3);
     $row4 = mysqli_fetch_array($query4);
     if($row1['username']==$username && $row1['password']==$password){     
-        ?>
-        <script>
-        alert("Berhasil Login, Admin");
-        </script>
-        <?php
         $_SESSION['id'] = $row1['id'];
         $_SESSION['status'] = $row1['status'];
         $_SESSION['nama'] = $row1['nama'];
-        header("Location:index.php");
-    }else if($row2['username']==$username && $row2['password']==$password){
         ?>
         <script>
-        alert("Berhasil Login");
-        </script>
+            var user = "<?php echo $_SESSION['user'];?>"
+            alert("Selamat Datang, " + user);
+            document.location = "index.php";
+            </script>
         <?php
+    }else if($row2['username']==$username && $row2['password']==$password){
         $_SESSION['id'] = $row2['id'];
         $_SESSION['status'] = $row2['status'];
         $_SESSION['nama'] = $row2['nama'];
-        header("Location:index.php");
-    }else if($row3['username']==$username && $row3['password']==$password){
         ?>
         <script>
-        alert("Berhasil Login, Owner");
+            var user = "<?php echo $_SESSION['user'];?>"
+            alert("Selamat Datang, " + user);
+            document.location = "index.php";
         </script>
         <?php
+    }else if($row3['username']==$username && $row3['password']==$password){
         $_SESSION['id'] = $row3['id'];
         $_SESSION['status'] = $row3['status'];
         $_SESSION['nama'] = $row3['nama'];
-        header("Location:index.php");
-    } else if($row4['username']==$username && $row4['password']==$password){
         ?>
         <script>
-        alert("Berhasil Login, Pegawai");
+            var user = "<?php echo $_SESSION['user'];?>"
+            alert("Selamat Datang, " + user);
+            document.location = "index.php";
         </script>
         <?php
+    } else if($row4['username']==$username && $row4['password']==$password){
         $_SESSION['id'] = $row4['id'];
         $_SESSION['status'] = $row4['status'];
         $_SESSION['nama'] = $row4['nama'];
-        header("Location:index.php");
+        ?>
+        <script>
+            var user = "<?php echo $_SESSION['user'];?>"
+            alert("Selamat Datang, " + user);
+            document.location = "index.php";
+        </script>
+        <?php
     } else {
         ?>
         <script>
