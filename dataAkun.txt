@@ -1,0 +1,11 @@
+Admin : 
+user = admin
+pass = rumah
+
+Owner : 
+user = ow
+pass = kaya
+
+pegawai : 
+user = peg 
+pass = kerja
