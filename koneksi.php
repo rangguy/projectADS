@@ -1,7 +1,7 @@
 <?php
     error_reporting(E_ALL ^ E_DEPRECATED AND E_NOTICE);
     $host = 'localhost';
-    $dbname = 'projek';
+    $dbname = 'projek_ads';
     $user = 'root';
     $pass = '';
 

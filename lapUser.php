@@ -39,7 +39,7 @@ $pass = md5($_POST['password']);
 
 if (isset($_POST['tambahData'])){
     if ($tabel == "admin"){
-        $sqlAdd = "INSERT into admin(id, nama, status, username, password) values ('', '$nama', 'admin', '$user', '$pass')";
+        $sqlAdd = "INSERT into admin(id, nama, status, username, password) values (0, '$nama', 'admin', '$user', '$pass')";
         $queryAdd = mysqli_query($conn, $sqlAdd);
         if ($queryAdd){
             ?> 
@@ -47,7 +47,7 @@ if (isset($_POST['tambahData'])){
             <?php
         }
     }else if($tabel == "pegawai"){
-        $sqlAdd = "INSERT into pegawai(id, nama, status, username, password) values ('', '$nama', 'pegawai', '$user', '$pass')";
+        $sqlAdd = "INSERT into pegawai(id, nama, status, username, password) values (0, '$nama', 'pegawai', '$user', '$pass')";
         $queryAdd = mysqli_query($conn, $sqlAdd);
         if ($queryAdd){
             ?> 

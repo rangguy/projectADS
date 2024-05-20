@@ -1,6 +1,6 @@
 Admin : 
 user = admin
-pass = rumah
+pass = admin
 
 Owner : 
 user = ow

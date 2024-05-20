@@ -9,7 +9,7 @@ if(isset($_POST['submit'])){
 	$pass = md5($_POST['password']);
 	$pass2 = md5($_POST['repassword']);
 	if($pass == $pass2){
-		$sql = "insert into pelanggan (id, nama, status, username, password) values('', '$name','pelanggan', '$user', '$pass')";
+		$sql = "INSERT into pelanggan (id, nama, status, username, password) VALUES (0, '$name','pelanggan', '$user', '$pass')";
 		$query = mysqli_query($conn, $sql);
 		if($query){
 			?> 
