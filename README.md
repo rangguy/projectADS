@@ -8,3 +8,5 @@ UNTUK MENCOBANYA : 1. EKSTRAK FILE KE XAMPP/HTDOCS
                    2. LALU BUAT DATABASE DENGAN NAMA "PROJEK" DI PHPMYADMIN
                    3. IMPORT FILE YANG TERDAPAT PADA ZIP YANG BEREKSTENSI .SQL
                    4. SELESAI
+## link hosting
+https://warna-commerce.000webhostapp.com/
